@@ -1,8 +1,10 @@
-interface content{
+export interface IContent{
   title:string,
   image:{
     src:string,
-    default:string
+    default:string,
+    width?:number,
+    height?:number
   }[],
   content:string[],
   borderColor?:string
@@ -11,7 +13,15 @@ interface content{
   
 }
 
-export const CRM:content[]=[
+export interface INav  {
+  id:number,
+  path:string,
+  name:string,
+  color:string,
+  darkcolor:string
+}
+
+export const CRM:IContent[]=[
 {title:`Система управления исполнителями`,
   image:[{
     src:`/image/crm/исполнитель.jpg`,
@@ -40,22 +50,19 @@ export const CRM:content[]=[
 {
   title:`Чертежи и детали`,
   image:[{
-    src:`/../image/crm/детали католог.jpg`,
+    src:`/image/crm/детали католог.jpg`,
     default:`каталог`
   },{
-    src:`/../image/crm/детали католог 1.jpg`,
+    src:`/image/crm/детали католог 1.jpg`,
     default:`каталог`
   },
 {
-    src:`/../image/crm/детали католог 2.jpg`,
+    src:`/image/crm/детали католог 2.jpg`,
     default:`каталог`
   },
+
 {
-    src:`./../image/crm/детали католог 3.jpg`,
-    default:`каталог`
-  },
-{
-    src:`./../image/crm/детали католог 4.jpg`,
+    src:`/image/crm/детали католог 4.jpg`,
     default:`каталог`
   }],
   content:[`В основе приложение лежит работа и заказ деталей по чертежам из католог `,
@@ -71,7 +78,7 @@ export const CRM:content[]=[
 {
   title:`Корзина`,
   image:[{
-    src:`./../image/crm/корзина.jpg`,
+    src:`/image/crm/корзина.jpg`,
     default:`корзина`
   }],
   content:[`К деталям которые добавлены в козину автоматически добовляется испонитель - на основании "ключевых слов" у это исполнителя`,
@@ -85,7 +92,7 @@ export const CRM:content[]=[
 {
   title:`Текущие заказы`,
   image:[{
-    src:`./../image/crm/заказы.jpg`,
+    src:`/image/crm/заказы.jpg`,
     default:`заказы`
   }],
   content:[`Страница "заказы" отображает все текющие заказы с информацией по ним и копку переходу на историю заказов`,
@@ -98,7 +105,7 @@ export const CRM:content[]=[
 {
   title:`Учет`,
   image:[{
-    src:`./../image/crm/учет.jpg`,
+    src:`/image/crm/учет.jpg`,
     default:`учет`
   }],
   content:[`Станица учет содержит иформацию по кнорагентам с которыми сейчас ведется работа(закупка или продажа деталей)`,
@@ -107,26 +114,25 @@ export const CRM:content[]=[
 {
   title:`Прочие комплектующие`,
   image:[{
-    src:`./../image/crm/прочие закзаы добовление.jpg`,
+    src:`/image/crm/прочие закзаы добовление.jpg`,
     default:`прочие заказы`
   },
 {
-    src:`./../image/crm/прочие закзаы.jpg`,
+    src:`/image/crm/прочие закзаы.jpg`,
     default:`прочие заказы`
   }],
   content:[`Предусмотрена фукнция добовления прочих деталей/комплетующих на лету `,
 
 `Можнос создать группу в группу добавить комплетующий заполним необходимы поля - после чего их(копмпектующие) - можно так же добовлять в корзину назначать исполнителя и заказыавть`]
 }
-
 ]
 
-export const OTHER:content[]=[
+export const OTHER:IContent[]=[
   {title:`TODO`,
 image:[
-  {src:`./../image/todo/todo1.jpg`,
+  {src:`/image/todo/todo1.jpg`,
   default:`todo`},
-   {src:`./../image/todo/todo2.jpg`,
+   {src:`/image/todo/todo2.jpg`,
   default:`todo`}
 ],
 content:[`приложение TODO было сделать для тренировки навыком TS с применением drugAndDrop механизмом распределения задач`,
@@ -136,10 +142,10 @@ bg:``
 },
 {title:`liveGame`,
 image:[
-  {src:`./../image/liveGame/liveGame 1.jpg`,
-  default:``},
-   {src:`./../image/liveGame/liveGame 2.jpg`,
-  default:``}
+  {src:`/image/liveGame/liveGame 1.jpg`,
+  default:`live game`,width:885,height:883},
+   {src:`/image/liveGame/liveGame 2.jpg`,
+  default:`live game`,width:885,height:883}
 ],
 content:[`Игра Жизнь со всем известными правивалми`,
   `каждый элемент отдельный div `,
@@ -147,4 +153,13 @@ content:[`Игра Жизнь со всем известными правива�
 bg:``
 },
 
+]
+
+export const skills:string[]=[
+  `React/Router/Redux`,`HTML`,`Css/Tailwind`,`Node js/Express`,`FireBase`,`NEXT js`,`Mongo db`,`JS/TS`
+]
+export const navBar:INav[] = [
+  {id:1,path:`/`,name:`HOME`,color:`bg-slate-300`,darkcolor:`bg-slate-600`},
+  {id:2,path:`/projects/crm`,name:`crm`,color:`bg-rose-200`,darkcolor:`bg-amber-800`},  
+  {id:4,path:`/projects/other`,name:`Other`,color:`bg-green-100`,darkcolor:`bg-cyan-900`}
 ]

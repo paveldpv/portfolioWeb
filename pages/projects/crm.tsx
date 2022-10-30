@@ -1,15 +1,19 @@
-import React from 'react'
-import {CRM} from './../../public/content/content'
-import Image from 'next/image'
-//@ts-ignore-start
-import ModalImage from 'react-modal-image '
-//@ts-ignore-end
-type Props = {}
+import React, { useEffect, useState } from 'react'
 
-export default function crm({}: Props) {
-  return (
-    <div>
-      
-    </div>
-  )
+import {CRM, IContent} from '../../public/content/content'
+import MySlider from '../../components/MySlider'
+
+interface Props  {
+  data:IContent[]
+}
+
+export default function crm() {
+  const [themes,setThemes]=useState(false)
+  useEffect(()=>{
+    let dark = localStorage.getItem(`darkThemes`)
+    setThemes(!!dark)
+  },[])
+
+  return(<MySlider data={CRM} title={`CRM`} />)    
+  
 }

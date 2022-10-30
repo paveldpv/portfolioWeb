@@ -6,7 +6,13 @@ module.exports = {
     "./layouts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'Amatic':'Amatic SC',
+        'Comfortaa':'Comfortaa'
+
+      },
+    },
   },
   plugins: [],
 }
