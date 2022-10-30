@@ -30,14 +30,14 @@ export default function crm({data,title}: Props) {
             {data.map((element,index)=>{
               return(
                 <div key={index}>
-                  <h2 className={` font-Comfortaa text-center font-bold text-2xl pb-2 ${dark?"text-teal-900":"text-teal-300"}`}>
+                  <h2 className={` font-Comfortaa text-center font-bold text-2xl pb-2 ${dark?"text-teal-900":"text-teal-50"}`}>
                     {element.title}
                   </h2>
                   <div className={`w-auto h-px ${dark?"bg-teal-900":'bg-teal-300'} my-6 rounded-lg `}></div>
                   <div className='flex justify-center justify-around gap-4'>
                     {element.image.map((image,index)=>{
                       return(<div key={index}
-                      className={`w-96  border-solid border-teal-900 border-2 p-2 rounded-2xl full_image`}>
+                      className={`w-96  border-solid ${dark?"border-teal-900":'border-teal-300'} border-2 p-2 rounded-2xl full_image`}>
                         <Image width={image.width||1577} 
                            height={image.height||927}
                            src={image.src}
@@ -47,10 +47,10 @@ export default function crm({data,title}: Props) {
                       
                     })}
                   </div>
-                 <div className=' w-auto h-px bg-teal-900 mt-6 rounded-lg'></div>
+                  <div className={`w-auto h-px ${dark?"bg-teal-900":'bg-teal-300'} my-2 rounded-lg `}></div>
                   <div className=' font-Comfortaa text-xl  py-10 font-bold '>
                     <ul className='' >
-                    {element.content.map((text,index)=><li className=' text-left text-teal-900'
+                    {element.content.map((text,index)=><li className={` text-left  ${dark?"text-teal-900":"text-teal-50"}`}
                      key={index} >{text}</li>)}
                       </ul>
                     </div>

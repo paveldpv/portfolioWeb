@@ -11,9 +11,9 @@ type Props = {
   
 }
 export const navBar:INav[] = [
-  {id:1,path:`/`,name:`HOME`,color:`bg-slate-300`,darkcolor:`bg-slate-600`},
-  {id:2,path:`/projects/crm`,name:`crm`,color:`bg-rose-200`,darkcolor:`bg-amber-800`},  
-  {id:4,path:`/projects/other`,name:`Other`,color:`bg-green-100`,darkcolor:`bg-cyan-900`}
+  {id:1,path:`/`,name:`HOME`,color:`bg-slate-200`,darkcolor:`bg-slate-600`},
+  {id:2,path:`/projects/crm`,name:`crm`,color:`bg-purple-100`,darkcolor:`bg-teal-900`},  
+  {id:4,path:`/projects/other`,name:`Other`,color:`bg-green-50`,darkcolor:`bg-cyan-900`}
 ]
 
 export default function Navbar({setBgColor}: Props) {

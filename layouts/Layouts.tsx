@@ -15,7 +15,7 @@ export default function Layout({ children }:any) {
   const title = useRouter().pathname==`/`? `HOME`:useRouter().pathname.split(`/`)[2].toUpperCase()
   
   return (
-    <div className={`fixed w-full h-full overflow-hidden flex flex-col ${darkThemes&&`dark`}`}> 
+    <div className={`fixed w-full h-full overflow-hidden flex flex-col ${darkThemes?"bg-teal-900":" bg-gray-900"} `}> 
 
     <Head>
       <title>{title===`/`?`HOME`:title}</title>

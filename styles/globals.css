@@ -55,9 +55,10 @@
   top: 25%;
   right: 1%;
 }
-body{
+/* body{
   background:#134e4a
-}
+} */
+
 .trapezoid {
   transform: perspective(250px) rotateX(35deg);
   position: relative;

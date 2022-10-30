@@ -21,7 +21,7 @@ export default function index(props:any) {
       <div className={`'text-2xl ${dark?"text-red-700 ":"text-red-50 "}`}>                
           <div className='flex gap-2 justify-around flex-wrap pt-24'>            
             <div className=' my-auto '> 
-            <div className=' text-7xl font-bold border-b-2 border-solid border-red-700 text-center font-Amatic '>
+            <div className=' text-7xl font-bold border-b-2 border-solid border-red-700 text-center font-Amatic test'>
               My skill
             </div>
               <ul>
