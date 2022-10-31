@@ -13,7 +13,7 @@ interface Props  {
 
 export default function crm({data,title}: Props) {
   let dark = useSelector<IReducer>(state=>state.darkThemes.dark)
- 
+  if(dark===null){return}
 
   var settingsSlider = {
     dots: true,

@@ -5,7 +5,8 @@ import { IReducer } from '../reducer/typeReducer'
 
 export default function Footer() {
 
-  let darkThemes = useSelector<IReducer>(state=>state.darkThemes.dark)  
+  let darkThemes = useSelector<IReducer>(state=>state.darkThemes.dark) 
+  if(darkThemes===null){return} 
   const copyEmailL=async()=>{ await navigator.clipboard.writeText(`paveldpv91@gmail.com`)}
 
   return (

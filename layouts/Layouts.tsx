@@ -11,7 +11,8 @@ export default function Layout({ children }:any) {
   const [bgColor,setBgColor]=useState(`bg-slate-300`)
   
   let darkThemes = useSelector<IReducer>(state=>state.darkThemes.dark)
-
+  if(darkThemes===null){return}
+  
   const title = useRouter().pathname==`/`? `HOME`:useRouter().pathname.split(`/`)[2].toUpperCase()
   
   return (

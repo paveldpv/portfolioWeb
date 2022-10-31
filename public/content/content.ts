@@ -18,7 +18,9 @@ export interface INav  {
   path:string,
   name:string,
   color:string,
-  darkcolor:string
+  darkcolor:string,
+  link?:string,
+  linkDark?:string
 }
 
 export const CRM:IContent[]=[
